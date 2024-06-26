@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum Plan {
+  free
+  premium
+}
+
+enum SubscriptionPeriod {
+  monthly
+  yearly
+}
+
+model User {
+  id         String  @id @default(cuid()) @map("_id")
+  email      String  @unique
+  name       String?
+  image      String?
+  plan       Plan    @default(free)
+  customerId String? @unique // Stripe customer ID, this will be important when we need to delete the subscription
+
+  Subscription Subscription?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Subscription {
+  id     String             @id @default(cuid()) @map("_id")
+  userId String             @unique
+  plan   Plan
+  period SubscriptionPeriod
+
+  startDate DateTime @default(now())
+  endDate   DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  User User @relation(fields: [userId], references: [id])
+}
