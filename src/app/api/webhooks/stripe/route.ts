@@ -84,7 +84,7 @@ export async function POST(req: Request) {
 								data: { plan: "premium" },
 							});
 						} else {
-							// one_time_purchase
+							// one_time_purchase here
 						}
 					}
 				}
