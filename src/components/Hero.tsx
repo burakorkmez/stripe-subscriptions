@@ -34,7 +34,7 @@ export const Hero = () => {
 
 						<a
 							rel='noreferrer noopener'
-							href='https://github.com/leoMirandaa/shadcn-landing-page.git'
+							href='https://github.com/jasonprogrammer775/subscription-starter.git'
 							target='_blank'
 							className={`w-full md:w-1/3 ${buttonVariants({
 								variant: "outline",
@@ -46,9 +46,9 @@ export const Hero = () => {
 					</div>
 				</div>
 
-				{/* Hero cards sections */}
+	
 				<div className='z-10'>
-					{/* <HeroCards /> */}
+				
 					<Image
 						src='/hero.png'
 						width={986}
@@ -58,8 +58,7 @@ export const Hero = () => {
 					/>
 				</div>
 
-				{/* Shadow effect */}
-				<div className='shadow'></div>
+		
 			</section>
 		</div>
 	);
