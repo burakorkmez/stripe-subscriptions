@@ -35,8 +35,8 @@ const Page = () => {
         return (
             <div className="flex flex-col justify-center items-center h-screen">
                 <Loader className="animate-spin text-blue-500 mb-4" size={48} />
-                <p className="text-lg font-medium">Redirecting...</p>
-                <p className="text-sm text-gray-500">Please wait...</p>
+                <p className="text-lg font-medium">Redirecting!...</p>
+                <p className="text-sm text-gray-500">Please wait!...</p>
             </div>
         )
     }
